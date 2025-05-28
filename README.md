@@ -27,6 +27,7 @@ The MASVS is a sister project of the [OWASP Mobile Application Security Testing 
 
 <br>
 
+- 🌐 [Access the MASVS Web](https://mas.owasp.org/MASVS/)
 - ⬇️ [Download the latest PDF](https://github.com/OWASP/owasp-masvs/releases/latest)
 - ✅ [Get the latest Mobile App Security Checklists](https://github.com/OWASP/owasp-mastg/releases/latest)
 - ⚡ [Contribute!](#how-to-contribute)
@@ -48,18 +49,14 @@ MAS Advocates are industry adopters of the OWASP MASVS and MASTG who have invest
 
 <a href="https://mas.owasp.org/MASTG/0x02c-Acknowledgements#our-mastg-advocates">
 <img src="https://raw.githubusercontent.com/OWASP/owasp-mastg/master/Document/Images/Other/nowsecure-logo.png" width="200px;" />
+<img src="https://raw.githubusercontent.com/OWASP/owasp-mastg/master/Document/Images/Other/guardsquare-logo.png" width="200px;" />
 </a>
 
 <br><br>
 
 ## Connect with Us
 
-<ul>
-<li><a href="https://github.com/OWASP/owasp-masvs/discussions"><img src="Document/images/GitHub_logo.png" width="14px"> GitHub Discussions</a></li>
-<li><a href="https://owasp.slack.com/archives/C1M6ZVC6S"><img src="Document/Images/slack_logo.png" width="14px">  #project-mobile-app-security</a> (<a href="https://owasp.slack.com/join/shared_invite/zt-g398htpy-AZ40HOM1WUOZguJKbblqkw#//">Get Invitation</a>)</li>
-<li><a href="https://twitter.com/OWASP_MAS"><img src="Document/images/twitter_logo.png" width="14px"> @OWASP_MAS </a> (Official Account)</li>
-<li><a href="https://twitter.com/bsd_daemon"><img src="Document/images/twitter_logo.png" width="14px"> @bsd_daemon </a> (Sven Schleier, Project Lead) <a href="https://twitter.com/grepharder"><img src="Document/images/twitter_logo.png" width="14px"> @grepharder </a> (Carlos Holguera, Project Lead)</li>
-</ul>
+<a href="https://mas.owasp.org/contact">
 
 ## How to Contribute
 
