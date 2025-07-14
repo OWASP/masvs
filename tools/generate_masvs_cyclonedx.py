@@ -74,10 +74,10 @@ class CycloneDX:
         self.bom['definitions']['standards'][0]['externalReferences'][0]['url'] = 'https://owasp.org/masvs'
         self.bom['definitions']['standards'][0]['externalReferences'].append({})
         self.bom['definitions']['standards'][0]['externalReferences'][1]['type'] = 'vcs'
-        self.bom['definitions']['standards'][0]['externalReferences'][1]['url'] = 'https://github.com/OWASP/owasp-masvs'
+        self.bom['definitions']['standards'][0]['externalReferences'][1]['url'] = 'https://github.com/OWASP/masvs'
         self.bom['definitions']['standards'][0]['externalReferences'].append({})
         self.bom['definitions']['standards'][0]['externalReferences'][2]['type'] = 'issue-tracker'
-        self.bom['definitions']['standards'][0]['externalReferences'][2]['url'] = 'https://github.com/OWASP/owasp-masvs/issues'
+        self.bom['definitions']['standards'][0]['externalReferences'][2]['url'] = 'https://github.com/OWASP/masvs/issues'
         self.bom['definitions']['standards'][0]['externalReferences'].append({})
         self.bom['definitions']['standards'][0]['externalReferences'][3]['type'] = 'social'
         self.bom['definitions']['standards'][0]['externalReferences'][3]['url'] = 'https://twitter.com/OWASP_MAS'

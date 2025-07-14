@@ -24,7 +24,7 @@ sarif_corrected_template = {
                 "releaseDateUtc": current_date_str,
                 "organization": "OWASP",
                 "informationUri": "https://mas.owasp.org/MASVS/",
-                "downloadUri": "https://github.com/OWASP/owasp-masvs/releases"
+                "downloadUri": "https://github.com/OWASP/masvs/releases"
             }
         },
         "taxonomies": [{

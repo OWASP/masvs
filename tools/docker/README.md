@@ -5,7 +5,7 @@ The MASVS document generation is based on pandocker: [https://github.com/dalibo/
 ## On your Machine
 
 - Install Docker
-- `cd` to the MASVS root folder `owasp-masvs/`
+- `cd` to the MASVS root folder `masvs/`
 - Run the `pandoc_makedocs.sh` script with the language folder and an optional version number (**do not `cd` into `tools/docker` to run it**):
 
     ```sh
@@ -27,9 +27,9 @@ The MASVS document generation is based on pandocker: [https://github.com/dalibo/
 
 ## On GitHub
 
-Each time you push to GitHub the workflows in the [MASVS GitHub Actions](https://github.com/OWASP/owasp-masvs/actions "MASVS GitHub Actions") will be triggered. You can check what will be executed inside the folder `owasp-masvs/.github/workflows`, where `docgenerator.yml` takes care of building the Docker image and running the generation script once per language inside the container.
+Each time you push to GitHub the workflows in the [MASVS GitHub Actions](https://github.com/OWASP/masvs/actions "MASVS GitHub Actions") will be triggered. You can check what will be executed inside the folder `masvs/.github/workflows`, where `docgenerator.yml` takes care of building the Docker image and running the generation script once per language inside the container.
 
-See the results in: <https://github.com/OWASP/owasp-masvs/actions>
+See the results in: <https://github.com/OWASP/masvs/actions>
 
 ## Generation Steps
 
@@ -67,4 +67,4 @@ Given a new version:
 
 ## Open Points (REMOVE from here when DONE!)
 
-Finish items for [https://github.com/OWASP/owasp-masvs/issues/361](https://github.com/OWASP/owasp-masvs/issues/361):
+Finish items for [https://github.com/OWASP/masvs/issues/361](https://github.com/OWASP/masvs/issues/361):
