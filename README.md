@@ -9,13 +9,13 @@
 [![Markdown Linter](https://github.com/OWASP/masvs/workflows/Markdown%20Linter/badge.svg)](https://github.com/OWASP/masvs/actions/workflows/markdown-linter.yml)
 [![URL Checker](https://github.com/OWASP/masvs/workflows/URL%20Checker/badge.svg)](https://github.com/OWASP/masvs/actions/workflows/url-checker.yml)
 
-This is the official Github Repository of the OWASP Mobile Application Security Verification Standard (MASVS). The MASVS establishes baseline security requirements for mobile apps that are useful in many scenarios. You can use it:
+The **OWASP Mobile Application Security Verification Standard (MASVS)** establishes baseline security and privacy requirements for mobile apps that are broken down in the the [OWASP Mobile Security Weakness Enumeration (MASWE)](https://github.com/OWASP/maswe) and tested in the [OWASP Mobile Application Security Testing Guide](https://github.com/OWASP/mastg). You can use it:
 
 - As a metric - To provide a security standard against which existing mobile apps can be compared by developers and application owners.
 - As guidance - To provide guidance during all phases of mobile app development and testing.
 - During procurement - To provide a baseline for mobile app security verification.
 
-The MASVS is a sister project of the [OWASP Mobile Application Security Testing Guide](https://github.com/OWASP/mastg "OWASP Mobile Application Security Testing Guide").
+> [OWASP MAS](https://mas.owasp.org): [OWASP MASVS](https://mas.owasp.org/MASVS) ➡ [OWASP MASWE](https://mas.owasp.org/MASWE) ➡ [OWASP MASTG](https://mas.owasp.org/MASTG)
 
 <br>
 
@@ -30,12 +30,13 @@ The MASVS is a sister project of the [OWASP Mobile Application Security Testing 
 - 🌐 [Access the MASVS Web](https://mas.owasp.org/MASVS/)
 - ⬇️ [Download the latest PDF](https://github.com/OWASP/masvs/releases/latest)
 - ✅ [Get the latest Mobile App Security Checklists](https://github.com/OWASP/mastg/releases/latest)
-- ⚡ [Contribute!](#how-to-contribute)
+- ⚡ [Contribute!](https://mas.owasp.org/contributing)
 - 💥 [Play with our Crackmes](https://mas.owasp.org/crackmes)
+- 📞 [Contact Us](https://mas.owasp.org/contact)
 
-## Trusted by ...
+## Trusted by
 
-The OWASP MASVS and MASTG are trusted by the following platform providers and standardization, governmental and educational institutions. [Learn more](https://mas.owasp.org/MASTG/0x02b-MASVS-MASTG-Adoption/).
+The OWASP MASVS, MASWE and MASTG are trusted by the following platform providers and standardization, governmental and educational institutions. [Learn more](https://mas.owasp.org/MASTG/0x02b-MASVS-MASTG-Adoption/).
 
 <a href="https://mas.owasp.org/MASTG/0x02b-MASVS-MASTG-Adoption/">
 <img src="https://github.com/OWASP/mastg/blob/master/Document/Images/Other/trusted-by-logos.png"/>
@@ -43,7 +44,7 @@ The OWASP MASVS and MASTG are trusted by the following platform providers and st
 
 ## 🥇 MAS Advocates
 
-MAS Advocates are industry adopters of the OWASP MASVS and MASTG who have invested a significant and consistent amount of resources to push the project forward by providing consistent high-impact contributions and continuously spreading the word. [Learn more](https://mas.owasp.org/MASTG/0x02c-Acknowledgements).
+MAS Advocates are industry adopters of the OWASP MASVS, MASWE and MASTG who have invested a significant and consistent amount of resources to push the project forward by providing consistent high-impact contributions and continuously spreading the word. [Learn more](https://mas.owasp.org/MASTG/0x02c-Acknowledgements).
 
 <br>
 
@@ -53,24 +54,3 @@ MAS Advocates are industry adopters of the OWASP MASVS and MASTG who have invest
 </a>
 
 <br><br>
-
-## Connect with Us
-
-<a href="https://mas.owasp.org/contact">
-
-## How to Contribute
-
-The MASVS is an open source effort and we welcome all kinds of contributions and feedback.
-
-**Help us improve & join our community:**
-
-- 🐞 [Report an error (typos, grammar)](https://github.com/OWASP/masvs/issues) or [fix it on a Pull Request](https://github.com/OWASP/masvs/pulls).
-- 💬 [Give feedback](https://github.com/OWASP/masvs/discussions/categories/general).
-- 🙏 [Ask questions](https://github.com/OWASP/masvs/discussions/categories/q-a)
-
-**Contribute with content:**
-
-- 💡 [Propose ideas or suggest improvements](https://github.com/OWASP/masvs/discussions/categories/ideas) (if it qualifies we'll promote it to an [Issue](https://github.com/OWASP/masvs/issues "Github issues"))
-- 📄 [Create a Pull Request](https://github.com/OWASP/masvs/pulls) for concrete fixes (e.g. grammar/typos) or content already approved by the core team.
-
-Before you start contributing, please check our [contribution guide](https://mas.owasp.org/contributing/) which should get you started. If you have any doubts [please contact us](#connect-with-us).
