@@ -1,0 +1,209 @@
+metadata:
+  title: Mobile Application Security Verification Standard (MASVS)
+  remarks: The OWASP MASVS (Mobile Application Security Verification Standard) is the industry standard for mobile app security. It can be used by mobile software architects and developers seeking to develop secure mobile apps, as well as security testers to ensure completeness and consistency of test results.
+  version: vx.x.x
+groups:
+- id: MASVS-STORAGE
+  index: 1
+  title: Storage
+  description: '
+
+    Mobile applications handle a wide variety of sensitive data, such as personally identifiable information (PII), cryptographic material, secrets, and API keys, that often need to be stored locally. This sensitive data may be stored in private locations, such as the app''s internal storage, or in public folders that are accessible by the user or other apps installed on the device. However, sensitive data can also be unintentionally stored or exposed to publicly accessible locations, typically as a side-effect of using certain APIs or system capabilities such as backups or logs.
+
+
+    This category is designed to help developers ensure that any sensitive data intentionally stored by the app is properly protected, regardless of the target location. It also covers unintentional leaks that can occur due to improper use of APIs or system capabilities.
+
+    '
+  controls:
+  - id: MASVS-STORAGE-1
+    statement: The app securely stores sensitive data.
+    description: Apps handle sensitive data coming from many sources such as the user, the backend, system services or other apps on the device and usually need to store it locally. The storage locations may be private to the app (e.g. its internal storage) or be public and therefore accessible by the user or other installed apps (e.g. public folders such as Downloads). This control ensures that any sensitive data that is intentionally stored by the app is properly protected independently of the target location.
+  - id: MASVS-STORAGE-2
+    statement: The app prevents leakage of sensitive data.
+    description: There are cases when sensitive data is unintentionally stored or exposed to publicly accessible locations; typically as a side-effect of using certain APIs, system capabilities such as backups or logs. This control covers this kind of unintentional leaks where the developer actually has a way to prevent it.
+- id: MASVS-CRYPTO
+  index: 2
+  title: Cryptography
+  description: '
+
+    Cryptography is essential for mobile apps because mobile devices are highly portable and can be easily lost or stolen. This means that an attacker who gains physical access to a device can potentially access all the sensitive data stored on it, including passwords, financial information, and personally identifiable information. Cryptography provides a means of protecting this sensitive data by encrypting it so that it cannot be easily read or accessed by an unauthorized user.
+
+
+    The purpose of the controls in this category is to ensure that the verified app uses cryptography according to industry best practices, which are typically defined in external standards such as [NIST.SP.800-175B](https://csrc.nist.gov/publications/detail/sp/800-175b/rev-1/final) and [NIST.SP.800-57](https://csrc.nist.gov/publications/detail/sp/800-57-part-1/rev-5/final). This category also focuses on the management of cryptographic keys throughout their lifecycle, including key generation, storage, and protection. Poor key management can compromise even the strongest cryptography, so it is crucial for developers to follow the recommended best practices to ensure the security of their users'' sensitive data.
+
+    '
+  controls:
+  - id: MASVS-CRYPTO-1
+    statement: The app employs current strong cryptography and uses it according to industry best practices.
+    description: Cryptography plays an especially important role in securing the user's data - even more so in a mobile environment, where attackers having physical access to the user's device is a likely scenario. This control covers general cryptography best practices, which are typically defined in external standards.
+  - id: MASVS-CRYPTO-2
+    statement: The app performs key management according to industry best practices.
+    description: Even the strongest cryptography would be compromised by poor key management. This control covers the management of cryptographic keys throughout their lifecycle, including key generation, storage and protection.
+- id: MASVS-AUTH
+  index: 3
+  title: Authentication and Authorization
+  description: '
+
+    Authentication and authorization are essential components of most mobile apps, especially those that connect to a remote service. These mechanisms provide an added layer of security and help prevent unauthorized access to sensitive user data. Although the enforcement of these mechanisms must be on the remote endpoint, it is equally important for the app to follow relevant best practices to ensure the secure use of the involved protocols.
+
+
+    Mobile apps often use different forms of authentication, such as biometrics, PIN, or multi-factor authentication code generators, to validate user identity. These mechanisms must be implemented correctly to ensure their effectiveness in preventing unauthorized access. Additionally, some apps may rely solely on local app authentication and may not have a remote endpoint. In such cases, it is critical to ensure that local authentication mechanisms are secure and implemented following industry best practices.
+
+
+    The controls in this category aim to ensure that the app implements authentication and authorization mechanisms securely, protecting sensitive user information and preventing unauthorized access. It is important to note that the security of the remote endpoint should also be validated using industry standards such as the [OWASP Application Security Verification Standard (ASVS)](https://owasp.org/www-project-application-security-verification-standard/).
+
+    '
+  controls:
+  - id: MASVS-AUTH-1
+    statement: The app uses secure authentication and authorization protocols and follows the relevant best practices.
+    description: Most apps connecting to a remote endpoint require user authentication and also enforce some kind of authorization. While the enforcement of these mechanisms must be on the remote endpoint, the apps also have to ensure that it follows all the relevant best practices to ensure a secure use of the involved protocols.
+  - id: MASVS-AUTH-2
+    statement: The app performs local authentication securely according to the platform best practices.
+    description: Many apps allow users to authenticate via biometrics or a local PIN code. These authentication mechanisms need to be correctly implemented. Additionally, some apps might not have a remote endpoint, and rely fully on local app authentication.
+  - id: MASVS-AUTH-3
+    statement: The app secures sensitive operations with additional authentication.
+    description: Some additional form of authentication is often desirable for sensitive actions inside the app. This can be done in different ways (biometric, pin, MFA code generator, email, deep links, etc) and they all need to be implemented securely.
+- id: MASVS-NETWORK
+  index: 4
+  title: Network Communication
+  description: '
+
+    Secure networking is a critical aspect of mobile app security, particularly for apps that communicate over the network. In order to ensure the confidentiality and integrity of data in transit, developers typically rely on encryption and authentication of the remote endpoint, such as through the use of TLS. However, there are numerous ways in which a developer may accidentally disable the platform secure defaults or bypass them entirely by utilizing low-level APIs or third-party libraries.
+
+
+    This category is designed to ensure that the mobile app sets up secure connections under any circumstances. Specifically, it focuses on verifying that the app establishes a secure, encrypted channel for network communication. Additionally, this category covers situations where a developer may choose to trust only specific Certificate Authorities (CAs), which is commonly referred to as certificate pinning or public key pinning.
+
+    '
+  controls:
+  - id: MASVS-NETWORK-1
+    statement: The app secures all network traffic according to the current best practices.
+    description: Ensuring data privacy and integrity of any data in transit is critical for any app that communicates over the network. This is typically done by encrypting data and authenticating the remote endpoint, as TLS does. However, there are many ways for a developer to disable the platform secure defaults, or bypass them completely by using low-level APIs or third-party libraries. This control ensures that the app is in fact setting up secure connections in any situation.
+  - id: MASVS-NETWORK-2
+    statement: The app performs identity pinning for all remote endpoints under the developer's control.
+    description: Instead of trusting all the default root CAs of the framework or device, this control will make sure that only very specific CAs are trusted. This practice is typically called certificate pinning or public key pinning.
+- id: MASVS-PLATFORM
+  index: 5
+  title: Platform Interaction
+  description: '
+
+    The security of mobile apps heavily depends on their interaction with the mobile platform, which often involves exposing data or functionality intentionally through the use of platform-provided inter-process communication (IPC) mechanisms and WebViews to enhance the user experience. However, these mechanisms can also be exploited by attackers or other installed apps, potentially compromising the app''s security.
+
+
+    Furthermore, sensitive data, such as passwords, credit card details, and one-time passwords in notifications, is often displayed in the app''s user interface. It is essential to ensure that this data is not unintentionally leaked through platform mechanisms such as auto-generated screenshots or accidental disclosure through shoulder surfing or device sharing.
+
+
+    This category comprises controls that ensure the app''s interactions with the mobile platform occur securely. These controls cover the secure use of platform-provided IPC mechanisms, WebView configurations to prevent sensitive data leakage and functionality exposure, and secure display of sensitive data in the app''s user interface. By implementing these controls, mobile app developers can safeguard sensitive user information and prevent unauthorized access by attackers.
+
+    '
+  controls:
+  - id: MASVS-PLATFORM-1
+    statement: The app uses IPC mechanisms securely.
+    description: Apps typically use platform provided IPC mechanisms to intentionally expose data or functionality. Both installed apps and the user are able to interact with the app in many different ways. This control ensures that all interactions involving IPC mechanisms happen securely.
+  - id: MASVS-PLATFORM-2
+    statement: The app uses WebViews securely.
+    description: WebViews are typically used by apps that have a need for increased control over the UI. This control ensures that WebViews are configured securely to prevent sensitive data leakage as well as sensitive functionality exposure (e.g. via JavaScript bridges to native code).
+  - id: MASVS-PLATFORM-3
+    statement: The app uses the user interface securely.
+    description: Sensitive data has to be displayed in the UI in many situations (e.g. passwords, credit card details, OTP codes in notifications). This control ensures that this data doesn't end up being unintentionally leaked due to platform mechanisms such as auto-generated screenshots or accidentally disclosed via e.g. shoulder surfing or sharing the device with another person.
+- id: MASVS-CODE
+  index: 6
+  title: Code Quality
+  description: '
+
+    Mobile apps have many data entry points, including the UI, IPC, network, and file system, which might receive data that has been inadvertently modified by untrusted actors. By treating this data as untrusted input and properly verifying and sanitizing it before use, developers can prevent classical injection attacks, such as SQL injection, XSS, or insecure deserialization. However, other common coding vulnerabilities, such as memory corruption flaws, are hard to detect in penetration testing but easy to prevent with secure architecture and coding practices. Developers should follow best practices such as the [OWASP Software Assurance Maturity Model (SAMM)](https://owaspsamm.org/model/) and [NIST.SP.800-218 Secure Software Development Framework (SSDF)](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf) to avoid introducing these flaws in the first place.
+
+
+    This category covers coding vulnerabilities that arise from external sources such as app data entry points, the OS, and third-party software components. Developers should verify and sanitize all incoming data to prevent injection attacks and bypass of security checks. They should also enforce app updates and ensure that the app runs up-to-date platforms to protect users from known vulnerabilities.
+
+    '
+  controls:
+  - id: MASVS-CODE-1
+    statement: The app requires an up-to-date platform version.
+    description: Every release of the mobile OS includes security patches and new security features. By supporting older versions, apps stay vulnerable to well-known threats. This control ensures that the app is running on an up-to-date platform version so that users have the latest security protections.
+  - id: MASVS-CODE-2
+    statement: The app has a mechanism for enforcing app updates.
+    description: Sometimes critical vulnerabilities are discovered in the app when it is already in production. This control ensures that there is a mechanism to force the users to update the app before they can continue using it.
+  - id: MASVS-CODE-3
+    statement: The app only uses software components without known vulnerabilities.
+    description: To be truly secure, a full whitebox assessment should have been performed on all app components. However, as it usually happens with e.g. for third-party components this is not always feasible and not typically part of a penetration test. This control covers "low-hanging fruit" cases, such as those that can be detected just by scanning libraries for known vulnerabilities.
+  - id: MASVS-CODE-4
+    statement: The app validates and sanitizes all untrusted inputs.
+    description: Apps have many data entry points including the UI, IPC, the network, the file system, etc. This incoming data might have been inadvertently modified by untrusted actors and may lead to bypass of critical security checks as well as classical injection attacks such as SQL injection, XSS or insecure deserialization. This control ensures that this data is treated as untrusted input and is properly verified and sanitized before it's used.
+- id: MASVS-RESILIENCE
+  index: 7
+  title: Resilience Against Reverse Engineering and Tampering
+  description: '
+
+    Defense-in-depth measures such as code obfuscation, anti-debugging, anti-tampering, etc. are important to increase app resilience against reverse engineering and specific client-side attacks. They add multiple layers of security controls to the app, making it more difficult for attackers to successfully reverse engineer and extract valuable intellectual property or sensitive data from it, which could result in:
+
+
+    - The theft or compromise of valuable business assets such as proprietary algorithms, trade secrets, or customer data
+
+    - Significant financial losses due to loss of revenue or legal action
+
+    - Legal and reputational damage due to breach of contracts or regulations
+
+    - Damage to brand reputation due to negative publicity or customer dissatisfaction
+
+
+    The controls in this category aim to ensure that the app is running on a trusted platform, prevent tampering at runtime and ensure the integrity of the app''s intended functionality. Additionally, the controls impede comprehension by making it difficult to figure out how the app works using static analysis and prevent dynamic analysis and instrumentation that could allow an attacker to modify the code at runtime.
+
+
+    However, note that the lack of any of these measures does not necessarily cause vulnerabilities - instead, they add threat-specific additional protection to apps which must also fulfil the rest of the OWASP MASVS security controls according to their specific threat models.
+
+    '
+  controls:
+  - id: MASVS-RESILIENCE-1
+    statement: The app validates the integrity of the platform.
+    description: Running on a platform that has been tampered with can be very dangerous for apps, as this may disable certain security features, putting the data of the app at risk. Trusting the platform is essential for many of the MASVS controls relying on the platform being secure (e.g. secure storage, biometrics, sandboxing, etc.). This control tries to validate that the OS has not been compromised and its security features can thus be trusted.
+  - id: MASVS-RESILIENCE-2
+    statement: The app implements anti-tampering mechanisms.
+    description: Apps run on a user-controlled device, and without proper protections it's relatively easy to run a modified version locally (e.g. to cheat in a game, or enable premium features without paying), or upload a backdoored version of it to third-party app stores. This control tries to ensure the integrity of the app's intended functionality by preventing modifications to the original code and resources.
+  - id: MASVS-RESILIENCE-3
+    statement: The app implements anti-static analysis mechanisms.
+    description: Understanding the internals of an app is typically the first step towards tampering with it (either dynamically, or statically). This control tries to impede comprehension by making it as difficult as possible to figure out how an app works using static analysis.
+  - id: MASVS-RESILIENCE-4
+    statement: The app implements anti-dynamic analysis techniques.
+    description: Sometimes pure static analysis is very difficult and time consuming so it typically goes hand in hand with dynamic analysis. Observing and manipulating an app during runtime makes it much easier to decipher its behavior. This control aims to make it as difficult as possible to perform dynamic analysis, as well as prevent dynamic instrumentation which could allow an attacker to modify the code at runtime.
+- id: MASVS-PRIVACY
+  index: 8
+  title: Privacy
+  description: '
+
+    The main goal of MASVS-PRIVACY is to provide a **baseline for user privacy**. It is not intended to cover all aspects of user privacy, especially when other standards and regulations such as ENISA or the GDPR already do that. We focus on the app itself, looking at what can be tested using information that''s publicly available or found within the app through methods like static or dynamic analysis.
+
+
+    While some associated tests can be automated, others necessitate manual intervention due to the nuanced nature of privacy. For example, if an app collects data that it didn''t mention in the app store or its privacy policy, it takes careful manual checking to spot this.
+
+
+    > **Note on "Data Collection and Sharing"**:For the MASTG tests, we treat "Collect" and "Share" in a unified manner. This means that whether the app is sending data to another server or transferring it to another app on the device, we view it as data that''s potentially leaving the user''s control. Validating what happens to the data on remote endpoints is challenging and often not feasible due to access restrictions and the dynamic nature of server-side operations. Therefore, this issue is outside of the scope of the MASVS.
+
+
+    **IMPORTANT DISCLAIMER**:
+
+
+    MASVS-PRIVACY is not intended to serve as an exhaustive or exclusive reference. While it provides valuable guidance on app-centric privacy considerations, it should never replace comprehensive assessments, such as a Data Protection Impact Assessment (DPIA) mandated by the General Data Protection Regulation (GDPR) or other pertinent legal and regulatory frameworks. Stakeholders are strongly advised to undertake a holistic approach to privacy, integrating MASVS-PRIVACY insights with broader assessments to ensure comprehensive data protection compliance. Given the specialized nature of privacy regulations and the complexity of data protection, these assessments are best conducted by privacy experts rather than security experts.
+
+    '
+  controls:
+  - id: MASVS-PRIVACY-1
+    statement: The app minimizes access to sensitive data and resources.
+    description: 'Apps should only request access to the data they absolutely need for their functionality and always with informed consent from the user. This control ensures that apps practice data minimization and restricts access control, reducing the potential impact of data breaches or leaks.
+
+
+      Furthermore, apps should share data with third parties only when necessary, and this should include enforcing that third-party SDKs operate based on user consent, not by default or without it. Apps should prevent third-party SDKs from ignoring consent signals or from collecting data before consent is confirmed.
+
+
+      Additionally, apps should be aware of the ''supply chain'' of SDKs they incorporate, ensuring that no data is unnecessarily passed down their chain of dependencies. This end-to-end responsibility for data aligns with recent SBOM regulatory requirements, making apps more accountable for their data practices.'
+  - id: MASVS-PRIVACY-2
+    statement: The app prevents identification of the user.
+    description: 'Protecting user identity is crucial. This control emphasizes the use of unlinkability techniques like data abstraction, anonymization and pseudonymization to prevent user identification and tracking.
+
+
+      Another key aspect addressed by this control is to establish technical barriers when employing complex ''fingerprint-like'' signals (e.g. device IDs, IP addresses, behavioral patterns) for specific purposes. For instance, a fingerprint used for fraud detection should be isolated and not repurposed for audience measurement in an analytics SDK. This ensures that each data stream serves its intended function without risking user privacy.'
+  - id: MASVS-PRIVACY-3
+    statement: The app is transparent about data collection and usage.
+    description: Users have the right to know how their data is being used. This control ensures that apps provide clear information about data collection, storage, and sharing practices, including any behavior a user wouldn't reasonably expect, such as background data collection. Apps should also adhere to platform guidelines on data declarations.
+  - id: MASVS-PRIVACY-4
+    statement: The app offers user control over their data.
+    description: Users should have control over their data. This control ensures that apps provide mechanisms for users to manage, delete, and modify their data, and change privacy settings as needed (e.g. to revoke consent). Additionally, apps should re-prompt for consent and update their transparency disclosures when they require more data than initially specified.

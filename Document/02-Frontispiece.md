@@ -6,7 +6,7 @@ The OWASP Mobile Application Security Verification Standard (MASVS) is the indus
 
 The OWASP MASVS is the result of years of community effort and industry feedback. We thank all the contributors who have helped shape this standard. We welcome your feedback on the OWASP MASVS at any time, especially as you apply it to your own organization and mobile app development projects. Getting inputs from a variety of mobile app developers will help us improve and update the standard which is revised periodically based on your inputs and feedback.
 
-You can provide feedback using GitHub Discussions in the OWASP MASVS repo <https://github.com/OWASP/owasp-masvs/discussions>, or contact the project leads directly <https://mas.owasp.org/contact/>.
+You can provide feedback using GitHub Discussions in the OWASP MASVS repo <https://github.com/OWASP/masvs/discussions>, or contact the project leads directly <https://mas.owasp.org/contact/>.
 
 The OWASP MASVS and MASTG are trusted by the following platform providers and standardization, governmental and educational institutions. [Learn more](https://mas.owasp.org/MASTG/Intro/0x02b-MASVS-MASTG-Adoption/).
 
@@ -58,7 +58,7 @@ While both the MASVS and the MASTG are created and maintained by the community o
 
 All our Changelogs are available online at the OWASP MASVS GitHub repository, see the Releases page:
 
-<https://github.com/OWASP/owasp-masvs/releases>
+<https://github.com/OWASP/masvs/releases>
 
 ## Copyright and License
 
