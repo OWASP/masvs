@@ -1,14 +1,14 @@
 # MASVS-RESILIENCE: Resilience Against Reverse Engineering and Tampering
 
-Defense-in-depth measures such as code obfuscation, anti-debugging, and anti-tampering can increase an app's resilience against reverse engineering and specific client-side attacks. They add multiple layers of security controls to the app, making it more difficult for attackers to modify code or extract sensitive information.
+Defense-in-depth measures such as code obfuscation, anti-debugging, anti-tampering, and runtime application self-protection (RASP) can increase an app's resilience against reverse engineering and specific client-side attacks. They add multiple layers of security controls to the app, making it more difficult for attackers to modify code or extract sensitive information.
 
-The **absence of these measures does not in itself constitute a vulnerability**. Instead, resilience controls provide additional protection against threat-specific attacks. **All apps must also fulfill the rest of the OWASP MASVS** controls according to their threat model.
+**The absence of these measures does not in itself constitute a vulnerability**. Instead, resilience controls provide additional protection against threat-specific attacks. **All apps must also fulfill the rest of the OWASP MASVS** controls according to their threat model.
 
 ## Business and Commercial Perspective
 
 Resilience measures are particularly relevant when the app needs to protect business assets or deter client-side abuse. They can help mitigate risks such as:
 
-- Theft or compromise of proprietary algorithms, trade secrets, or customer data  
+- Theft or compromise of proprietary algorithms, trade secrets, customer data, AI or machine learning models  
 - Fraud, cheating, or revenue leakage in online games, financial apps, or subscription models  
 - Legal and reputational damage due to breach of contracts or regulations  
 - Damage to brand reputation due to negative publicity or customer dissatisfaction
@@ -21,7 +21,7 @@ In some contexts, such as government, health, or other public-interest apps, res
 
 - It reduces transparency of what the compiled application is doing  
 - Independent verification of the compiled application is more difficult  
-- The smartphone market is very diverse, and resiliency controls may flag edge-cases as untrustworthy, locking out those users
+- The diversity of smartphone operating systems can lead to false positives, potentially excluding legitimate users
 
 In case these concerns are valid for the target application, we recommend applying the following principles:
 
@@ -32,12 +32,14 @@ In case these concerns are valid for the target application, we recommend applyi
 
 ## Platform/Developer lock-in
 
-Runtime resiliency controls focus on two things:
+Runtime resilience controls focus on two things:
 
 - The application and its own memory and files  
 - The underlying OS
 
-While verifying the integrity of the application itself is typically OS-agnostic, the same cannot be said for verifying the underlying OS. For example, while there is an open-source version of Android (AOSP), this is typically not the OS that is installed on consumer devices. Instead, many different flavors are developed with small differences in feature sets and security controls. Some examples include Google Android, HarmonyOS, FireOS, LineageOS, /e/OS, etc. By implementing flavor-specific detection mechanisms, the application may not function on any other flavor of Android. This results in a platform lock-in, possibly excluding legitimate users from using the application.
+While verifying the integrity of the application itself is typically OS-agnostic, the same cannot be said for verifying the underlying OS. For example, while there is an open-source version of Android (AOSP), this is typically not the OS that is installed on consumer devices. Instead, many different flavors are developed with small differences in feature sets and security controls. Some examples include Google Android, HarmonyOS, FireOS, LineageOS, /e/OS, etc. By implementing flavor-specific detection mechanisms, the application may not function on any other flavor of Android. This results in a platform lock-in, possibly excluding legitimate users from using the application.  
+
+Additionally, reliance on platform services such as Google Play Integrity API or Apple's App Attestation may further reinforce lock-in and limit accessibility for certain user groups.
 
 ## Malware and Testing Perspective
 
