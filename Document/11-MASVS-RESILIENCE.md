@@ -28,9 +28,9 @@ In case these concerns are valid for the target application, we recommend applyi
 - Open source distribution of source code for independent audits  
 - Security must rely on verifiable design, strong cryptography, and server-side validation  
 - Anti-tampering or obfuscation techniques must not be used as a substitute for proper security architecture  
-- Controls should prevent cheating or malicious modification without hindering legitimate analysis or oversight
+- Controls should prevent cheating or malicious modification without hindering legitimate users and legitimate analysis or oversight
 
-## Platform/Developer lock-in
+## Platform Lock-in
 
 Runtime resilience controls focus on two things:
 
