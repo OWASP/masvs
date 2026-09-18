@@ -25,11 +25,7 @@ Each of these control groups contains individual controls labeled **MASVS-XXXXX-
 
 ## MAS Testing Profiles
 
-The MAS project has traditionally provided three verification levels (L1, L2 and R), which were revisited during the MASVS refactoring in 2023, and have been reworked as ["MAS Testing Profiles"](https://mas.owasp.org/MASTG/0x03b-Testing-Profiles/) and moved over to the OWASP MASTG. These profiles are now aligned with the [NIST OSCAL (Open Security Controls Assessment Language)](https://pages.nist.gov/OSCAL/) standard, which is a comprehensive catalog of security controls that can be used to secure information systems.
-
-By aligning with OSCAL, the MASVS provides a more flexible and comprehensive approach to security testing. OSCAL provides a standard format for security control information, which allows for easier sharing and reuse of security controls across different systems and organizations. This allows for a more efficient use of resources and a more targeted approach to mobile app security testing.
-
-However, it is important to note that implementing these profiles fully or partially should be a risk-based decision made in consultation with business owners. The profiles should be tailored to the specific security risks and requirements of the mobile application being developed, and any deviations from the recommended controls should be carefully justified and documented.
+The MAS project has traditionally provided three verification levels (L1, L2 and R). They were revisited during the MASVS refactoring in 2023, and the MASWE refactoring in 2026 and have been reworked as ["MAS Profiles"](https://mas.owasp.org/Profiles/). It is important to note that implementing these profiles fully or partially should be a risk-based decision made in consultation with business owners. The profiles should be tailored to the specific security risks and requirements of the mobile application being developed, and any deviations from the recommended controls should be carefully justified and documented.
 
 ## Assumptions
 
@@ -55,7 +51,7 @@ To ensure that these practices are followed, developers can provide documentatio
 
 > The OWASP MASVS assumes other relevant security standards are also leveraged to ensure that all systems involved in the app's operation meet their applicable requirements.
 
-Mobile apps often interact with multiple systems, including backend servers, third-party APIs, Bluetooth devices, cars, IoT devices, and more. Each of these systems may introduce their own security risks that must be considered as part of the mobile app's security design and threat modeling. For example, when interacting with a backend server, the [OWASP Application Security Verification Standard (ASVS)](https://owasp.org/www-project-application-security-verification-standard/) should be used to ensure that the server is secure and meets the required security standards. In the case of Bluetooth devices, the app should be designed to prevent unauthorized access, while for cars, the app should be designed to protect the user's data and ensure that there are no safety issues with the car's operation.
+Mobile apps often interact with multiple systems, including backend servers, third-party APIs, Bluetooth devices, cars, IoT devices, and more. Each of these systems may introduce their own security risks that must be considered as part of the mobile app's security design and threat modeling. For example, when interacting with a backend server, the [OWASP Application Security Verification Standard (ASVS)](https://owasp.org/projects/asvs) should be used to ensure that the server is secure and meets the required security standards. In the case of Bluetooth devices, the app should be designed to prevent unauthorized access, while for cars, the app should be designed to protect the user's data and ensure that there are no safety issues with the car's operation.
 
 ### Security Knowledge and Expertise
 
