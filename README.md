@@ -51,6 +51,7 @@ MAS Advocates are industry adopters of the OWASP MASVS, MASWE and MASTG who have
 <a href="https://mas.owasp.org/MASTG/0x02c-Acknowledgements#our-mastg-advocates">
 <img src="https://raw.githubusercontent.com/OWASP/mastg/master/Document/Images/Other/nowsecure-logo.png" width="200px;" />
 <img src="https://raw.githubusercontent.com/OWASP/mastg/master/Document/Images/Other/guardsquare-logo.png" width="200px;" />
+<img src="https://raw.githubusercontent.com/OWASP/mastg/master/Document/Images/Other/vulnit-logo.png" width="200px;" />
 </a>
 
 <br><br>
