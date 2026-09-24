@@ -55,3 +55,5 @@ MAS Advocates are industry adopters of the OWASP MASVS, MASWE and MASTG who have
 </a>
 
 <br><br>
+
+8
